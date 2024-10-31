@@ -24,6 +24,7 @@ So that I can hire the best candidates.
 - The application uses TypeScript to type user data and handle API responses.
 - The application stores potential candidates in local storage for future access.
 
+
 ## Deployment (32%)
 
 - The application is deployed at a live URL.

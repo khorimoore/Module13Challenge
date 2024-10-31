@@ -14,7 +14,6 @@ const CandidatesPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  
   const fetchCandidates = async () => {
     setLoading(true); 
     try {
@@ -27,8 +26,7 @@ const CandidatesPage: React.FC = () => {
       setLoading(false); 
     }
   };
-
-
+  
   useEffect(() => {
     fetchCandidates(); 
   }, []);
