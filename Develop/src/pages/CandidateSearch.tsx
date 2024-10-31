@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { searchGithubUser } from '../api/API'; // Assuming searchGithubUser is the API fetch function
+import { searchGithubUser } from '../api/API'; 
 
 interface Candidate {
   id: number;
@@ -10,17 +10,16 @@ interface Candidate {
 }
 
 const CandidateSearch: React.FC = () => {
-  const [candidates, setCandidates] = useState<Candidate[]>([]); // Initialize as an empty array
+  const [candidates, setCandidates] = useState<Candidate[]>([]); 
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Function to fetch candidates data
+  
   const fetchCandidates = async () => {
     try {
-      const username = 'example_username'; // Replace with actual username or fetch dynamically
-      const data = await searchGithubUser(username); // Fetch from API
+      const username = 'example_username'; 
+      const data = await searchGithubUser(username); 
 
-      // Check if the data is an array before setting it
       setCandidates(Array.isArray(data) ? data : []);
       setLoading(false);
     } catch (err) {
@@ -29,12 +28,12 @@ const CandidateSearch: React.FC = () => {
     }
   };
 
-  // useEffect to fetch data when the component mounts
+ 
   useEffect(() => {
     fetchCandidates();
   }, []);
 
-  // JSX to render the component
+ 
   return (
     <div>
       <h1>Candidate Search</h1>
